@@ -1,0 +1,272 @@
+package ucf.assignment;
+
+import javafx.application.Platform;
+import javafx.beans.binding.Bindings;
+import javafx.beans.binding.BooleanBinding;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.value.ObservableValue;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.ProgressBar;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.text.Text;
+import javafx.beans.property.IntegerProperty;
+import javafx.stage.Stage;
+
+import javax.swing.*;
+import javax.swing.event.ChangeListener;
+import java.io.IOException;
+import java.net.URL;
+import java.util.*;
+
+public class BattleController implements Initializable {
+    public ImageView Her;
+    public Button attackButton;
+    public ImageView You;
+    public Text attackProgress;
+    public ProgressBar yourHealth;
+    public ProgressBar herHealth;
+    public Button Attack2;
+    public Text attackProgress1;
+    public Text lifeStatus;
+    public Text lifeStatus1;
+    public Button Quit;
+    public Button youDefend;
+    public Button sheDefend;
+    public Button WaterGun;
+    public Button Balloon;
+    public Button Bucket;
+    int HealthHer = 100;
+    int HealthYou = 100;
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        Her.setImage(new Image("/ucf/assignment/Battles/Shirly.png"));
+        You.setImage(new Image("/ucf/assignment/Battles/MainHello.png"));
+        Balloon.setVisible(false);
+        WaterGun.setVisible(false);
+        Bucket.setVisible(false);
+
+    }
+
+    public void attack(ActionEvent event) throws IOException {
+
+        Attack2.setDisable(true);
+
+        int RNG1 = (int) (Math.random() * (25 - 1)) + 1;
+        HealthHer = HealthHer - RNG1;
+
+        Her.setImage(new Image("/ucf/assignment/Battles/ShirlyHit.png"));
+        You.setImage(new Image("/ucf/assignment/Battles/MainShoot.png"));
+        ObservableValue<Integer> obsInt = new SimpleIntegerProperty(HealthHer).asObject();
+        herHealth.progressProperty().bind(obsInt);
+        attackProgress1.setText(String.valueOf(HealthHer));
+        System.out.println(HealthHer+"Her health");
+        youDefend.setDisable(true);
+        sheDefend.setDisable(false);
+
+        if(HealthHer>=75){
+            lifeStatus1.setText("TTTT");
+        }
+        else if(HealthHer>=50 && HealthHer<74){
+            lifeStatus1.setText("TTT");
+        }
+        else if(HealthHer>=25 && HealthHer<49){
+            lifeStatus1.setText("TT");
+        }
+        else if(HealthHer>=0 && HealthHer<24){
+            lifeStatus1.setText("T");
+        }
+        if(HealthHer<=0){
+
+            Stage stage;//set stage
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/ucf/assignment/Win.fxml")));//load the main view of fxml
+            Scene scene = new Scene(root); // attach scene graph to scene
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            stage.setTitle("To-do List"); // displayed in window's title bar
+            stage.setScene(scene); // attach scene to stage
+            scene.getStylesheets().add("ucf/assignment/Styling/DressUpStyle.css"); //load the custom cascading sheed
+            stage.show(); // display the stage
+        }
+        int RandomIndex = (int) (Math.random() * (100));;
+        int Randomindex2;
+        Balloon.setDisable(false);
+        WaterGun.setDisable(false);
+        Bucket.setDisable(false);
+        // bucket > watergun > water balloon
+        System.out.print("The index for button choice is" + RandomIndex);
+
+        if(RandomIndex >=0 && RandomIndex <=24){
+            //gun (25%)
+
+            //disable (cup || ballon)
+            Balloon.setDisable(true);
+            Bucket.setDisable(true);
+            System.out.println("Watergun was chosen");
+        }
+        else if(RandomIndex>24 && RandomIndex <=49){
+            // cup (50%)
+            // disable (gun || balloon)
+            WaterGun.setDisable(true);
+            Bucket.setDisable(true);
+            System.out.println("Bucket was chosen");
+
+        }
+        else if(RandomIndex>50 && RandomIndex <=99){
+            //balloon (25%)
+            // disable (cup || gun)
+            Balloon.setDisable(true);
+            WaterGun.setDisable(true);
+            System.out.println("Balloon was chosen");
+        }
+
+
+        Attack2.setDisable(false);
+        attackButton.setDisable(true);
+
+
+    }
+    public void sheAttack(ActionEvent event) throws IOException, InterruptedException {
+        Balloon.setVisible(true);
+        WaterGun.setVisible(true);
+        Bucket.setVisible(true);
+
+        Balloon.setDisable(true);
+        WaterGun.setDisable(true);
+        Bucket.setDisable(true);
+
+        attackButton.setDisable(true);
+        ObservableValue<Integer> obsInt = new SimpleIntegerProperty(HealthYou).asObject();
+        yourHealth.progressProperty().bind(obsInt);
+
+
+        //console index
+            //give 3 buttons; randomly choose with probability
+                    //index from 0-99 to create the probability
+                        //indicate 0-24 for watergun 25-49 for cup and 50-99 for balloon
+                //water gun (25%) || water balloon(50%) || cup (25%)
+                //water gun (15-25) || 10-15 || 0-10
+
+        /*
+            int RNG2 = (int) (Math.random() * (25 - 1)) + 1;
+            HealthYou = HealthYou - RNG2;
+            attackProgress.setText(String.valueOf(HealthYou));
+
+         */
+
+
+        Her.setImage(new Image("/ucf/assignment/Battles/ShirlyShoot.png"));
+        You.setImage(new Image("/ucf/assignment/Battles/MainActuallyHit.png"));
+
+        System.out.println(HealthYou+"Your health");
+
+        sheDefend.setDisable(true);
+        youDefend.setDisable(false);
+        youDefend.setVisible(false);
+
+        call();
+        callagain();
+        // will disable the Button
+        if(HealthYou>=75){
+            lifeStatus.setText("TTTT");
+        }
+        else if(HealthYou>=50 && HealthYou<74){
+            lifeStatus.setText("TTT");
+        }
+        else if(HealthYou>=25 && HealthYou<49){
+            lifeStatus.setText("TT");
+        }
+        else if(HealthYou>=0 && HealthYou<24){
+            lifeStatus.setText("T");
+        }
+        if(HealthYou<=0){
+            Stage stage;//set stage
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/ucf/assignment/GameOver.fxml")));//load the main view of fxml
+            Scene scene = new Scene(root); // attach scene graph to scene
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            stage.setTitle("To-do List"); // displayed in window's title bar
+            stage.setScene(scene); // attach scene to stag
+            scene.getStylesheets().add("ucf/assignment/Styling/DressUpStyle.css"); //stylesheet on hand
+            stage.show(); // display the stage
+        }
+
+        attackButton.setDisable(false);
+        Attack2.setDisable(true);
+
+
+    }
+
+
+    protected void  call() throws InterruptedException {
+
+        youDefend.setVisible(true);
+
+
+    }
+
+    protected void  callagain() throws InterruptedException {
+
+        youDefend.setVisible(false);
+    }
+
+
+
+    public void quitGame(ActionEvent event) throws IOException {
+        Stage stage;//set stage
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/ucf/assignment/DressUpConsole.fxml")));//load the main view of fxml
+        Scene scene = new Scene(root); // attach scene graph to scene
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setTitle("To-do List"); // displayed in window's title bar
+        stage.setScene(scene); // attach scene to stage
+        scene.getStylesheets().add("ucf/assignment/Styling/DressUpStyle.css"); //stylesheet on hand
+        stage.show(); // display the stage
+    }
+
+    public void yourDefense(ActionEvent actionEvent) {
+        HealthYou +=5;
+        attackProgress.setText(String.valueOf(HealthYou));
+        System.out.println(HealthYou+"Your health");
+    }
+
+    public void herDefense(ActionEvent actionEvent) {
+        HealthHer +=5;
+        attackProgress1.setText(String.valueOf(HealthHer));
+        System.out.println(HealthHer+ "Her health");
+    }
+
+    //Bucket (15-25) || 10-15 || 0-10
+    public void attackWaterGun(ActionEvent actionEvent) {
+        //gun (25%)
+        //disable (cup || ballon
+
+
+        int RNG2 = (int) (Math.random() * (25 - 15)) + 15;
+        HealthYou = HealthYou - RNG2;
+        attackProgress.setText(String.valueOf(HealthYou));
+    }
+
+    public void attackBalloon(ActionEvent actionEvent) {
+        // cup (50%)
+        // disable (gun || balloon
+
+
+        int RNG2 = (int) (Math.random() * (15 - 10)) + 10;
+        HealthYou = HealthYou - RNG2;
+        attackProgress.setText(String.valueOf(HealthYou));
+    }
+
+    public void attackBucket(ActionEvent actionEvent) {
+        //balloon (25%)
+        // disable (cup || gun)
+        int RNG2 = (int) (Math.random() * 10);
+        HealthYou = HealthYou - RNG2;
+        attackProgress.setText(String.valueOf(HealthYou));
+        Her.setImage(new Image("/ucf/assignment/Battles/Shirly.png"));
+        You.setImage(new Image("/ucf/assignment/Battles/MainHello.png"));
+    }
+}

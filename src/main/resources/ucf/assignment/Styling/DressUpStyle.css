@@ -1,0 +1,150 @@
+@font-face {
+    font-family:'frames';
+    src:url("fontframes.ttf");
+}
+
+.textLife {
+    -fx-font-family: frames;
+}
+
+
+.buttonTop1{    -fx-background-image: url('LongIcon.png');
+                -fx-background-color: transparent;
+                -fx-background-size: 150px 150px;
+                -fx-background-repeat: no-repeat;
+                -fx-background-position: center;
+                -fx-border: 3px;
+                -fx-border-color: #ffffff;
+                }
+
+.buttonTop2{    -fx-background-image: url('MediumIcons.png');
+                -fx-background-color: transparent;
+                -fx-background-size: 150px 150px;
+                -fx-background-repeat: no-repeat;
+                -fx-background-position: center;
+                -fx-border: 3px;
+                -fx-border-color: #ffffff;}
+
+.buttonTop3{    -fx-background-image: url('ShortIcons.png');
+                -fx-background-color: transparent;
+                -fx-background-size: 150px 150px;
+                -fx-background-repeat: no-repeat;
+                -fx-background-position: center;
+                                    -fx-border: 3px;
+                                    -fx-border-color: #ffffff;}
+
+.buttonBottoms1{    -fx-background-image: url('ShortsIcon.png');
+                    -fx-background-color: transparent;
+                    -fx-background-size: 150px 150px;
+                    -fx-background-repeat: no-repeat;
+                    -fx-background-position: center;
+                    -fx-border: 3px;
+                    -fx-border-color: #ffffff;}
+
+.buttonBottoms2{    -fx-background-image: url('SSkirtIcons.png');
+                    -fx-background-color: transparent;
+                    -fx-background-size: 150px 150px;
+                    -fx-background-repeat: no-repeat;
+                    -fx-background-position: center;
+                    -fx-border: 3px;
+                    -fx-border-color: #ffffff;}
+
+.buttonBottoms3{    -fx-background-image: url('LSkirtIcon.png');
+                    -fx-background-color: transparent;
+                    -fx-background-size: 150px 150px;
+                    -fx-background-repeat: no-repeat;
+                    -fx-background-position: center;
+                    -fx-border: 3px;
+                    -fx-border-color: #ffffff;}
+
+.buttonShoes1{    -fx-background-image: url('oxfordIcon.png');
+                  -fx-background-color: transparent;
+                  -fx-background-size: 150px 150px;
+                  -fx-background-repeat: no-repeat;
+                  -fx-background-position: center;
+                    -fx-border: 3px;
+                    -fx-border-color: #ffffff;}
+
+.buttonShoes2{    -fx-background-image: url('sandalIcons.png');
+                  -fx-background-color: transparent;
+                  -fx-background-size: 150px 150px;
+                  -fx-background-repeat: no-repeat;
+                  -fx-background-position: center;
+                    -fx-border: 3px;
+                    -fx-border-color: #ffffff;}
+
+.buttonShoes3{    -fx-background-image: url('BootIcons.png');
+                  -fx-background-color: transparent;
+                  -fx-background-size: 150px 150px;
+                  -fx-background-repeat: no-repeat;
+                  -fx-background-position: center;
+                    -fx-border: 3px;
+                    -fx-border-color: #ffffff;}
+
+                    .spinner .increment-arrow-button,
+                    .spinner .decrement-arrow-button {
+                        -fx-body-color: transparent;
+
+                    }
+
+                    .spinner .increment-arrow-button:hover,
+                    .spinner .decrement-arrow-button:hover {
+                        /* interpolate color between yellow and red based on first color brightness */
+                        -fx-body-color: transparent;
+                    }
+
+                    .spinner .increment-arrow-button:hover:pressed,
+                    .spinner .decrement-arrow-button:hover:pressed,
+                    .spinner .increment-arrow-button:pressed,
+                    .spinner .decrement-arrow-button:pressed {
+                        /* interpolate color between yellow and red based on first color brightness */
+                        -fx-body-color: transparent;
+                    }
+                    .spinner {
+                     -fx-background-color: transparent;
+                    }
+
+                    /* On user interaction */
+                    .spinner:focused,
+                    .spinner:contains-focus {
+                      -fx-background-color: transparent;
+                    }
+
+
+.balloon{
+    -fx-background-image: url('BalloonButton.png');
+    -fx-background-color: transparent;
+    -fx-background-size: 92px 92px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+.bucket{
+    -fx-background-image: url('BucketButton.png');
+    -fx-background-color: transparent;
+    -fx-background-size: 92px 92px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+.watergun{
+    -fx-background-image: url('WaterGunButton.png');
+    -fx-background-color: transparent;
+    -fx-background-size: 92px 92px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+.health{
+    -fx-background-image: url('HealthButton.png');
+    -fx-background-color: transparent;
+    -fx-background-size: 92px 92px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+.prettybutton{
+   -fx-background-color: #a39193;
+   -fx-text-fill: #ffffff;
+   -fx-border-color: #765b5e;
+}

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600" prefWidth="900" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ucf.assignment.LoseController">
+   <children>
+      <ImageView fitHeight="667.0" fitWidth="1079.0" layoutX="-30.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Backgrounds/ShirlyWins.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="newGame" layoutX="23.0" layoutY="487.0" mnemonicParsing="false" onAction="#backToGame" styleClass="prettybutton" stylesheets="@Styling/DressUpStyle.css" text="Play Again">
+         <font>
+            <Font size="39.0" />
+         </font>
+      </Button>
+      <Button fx:id="mainMenu" layoutX="779.0" layoutY="489.0" mnemonicParsing="false" onAction="#backToMenu" styleClass="prettybutton" stylesheets="@Styling/DressUpStyle.css" text="Main Menu">
+         <font>
+            <Font size="39.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

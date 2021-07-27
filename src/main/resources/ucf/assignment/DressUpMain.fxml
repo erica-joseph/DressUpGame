@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600" prefWidth="900" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ucf.assignment.Controller">
+   <children>
+      <ImageView fitHeight="667.0" fitWidth="1079.0" layoutX="-79.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Backgrounds/RoomForClass.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="girlChoice" fitHeight="580.0" fitWidth="872.0" layoutX="14.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="girlChoiceBottom" fitHeight="580.0" fitWidth="872.0" layoutX="15.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="girlChoiceTop" fitHeight="580.0" fitWidth="872.0" layoutX="15.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="girlChoiceShoes" fitHeight="580.0" fitWidth="872.0" layoutX="14" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
+      <Spinner fx:id="girlSpinner" layoutX="558.0" layoutY="57.0" prefHeight="25.0" prefWidth="151.0" style="-fx-border-color: #765b5e;">
+         <tooltip>
+            <Tooltip text="Choose complexion" />
+         </tooltip></Spinner>
+      <Button fx:id="selected" layoutX="560.0" layoutY="534.0" mnemonicParsing="false" onAction="#saveLook" styleClass="prettybutton" stylesheets="@Styling/DressUpStyle.css" text="Snap a photo!" />
+      <Button fx:id="longShirt1" layoutX="558.0" layoutY="116.0" mnemonicParsing="false" onAction="#topLong" prefHeight="100" prefWidth="100" styleClass="buttonTop1" text=" ">
+         <tooltip>
+            <Tooltip text="Choose a top" />
+         </tooltip></Button>
+      <Button fx:id="longShirt2" layoutX="713.0" layoutY="116.0" mnemonicParsing="false" onAction="#topMedium" prefHeight="100" prefWidth="100" styleClass="buttonTop2" text=" " />
+      <Button fx:id="longShirt3" layoutX="868.0" layoutY="115.0" mnemonicParsing="false" onAction="#topShort" prefHeight="100" prefWidth="100" styleClass="buttonTop3" text=" " />
+      <Button fx:id="bottoms1" layoutX="558.0" layoutY="265.0" mnemonicParsing="false" onAction="#bottomsSkirt" prefHeight="100" prefWidth="100" styleClass="buttonBottoms1" text=" ">
+         <tooltip>
+            <Tooltip text="Choose a bottom" />
+         </tooltip></Button>
+      <Button fx:id="bottoms2" layoutX="713.0" layoutY="265.0" mnemonicParsing="false" onAction="#bottomsShorts" prefHeight="100" prefWidth="100" styleClass="buttonBottoms2" text=" " />
+      <Button fx:id="bottoms3" layoutX="868.0" layoutY="264.0" mnemonicParsing="false" onAction="#bottomsLong" prefHeight="100" prefWidth="100" styleClass="buttonBottoms3" text=" " />
+      <Button fx:id="shoes1" layoutX="558.0" layoutY="411.0" mnemonicParsing="false" onAction="#shoesOx" prefHeight="100" prefWidth="100" styleClass="buttonShoes1" text=" ">
+         <tooltip>
+            <Tooltip text="Choose shoes" />
+         </tooltip></Button>
+      <Button fx:id="shoes2" layoutX="713.0" layoutY="411.0" mnemonicParsing="false" onAction="#shoesBoot" prefHeight="100" prefWidth="100" styleClass="buttonShoes2" text=" " />
+      <Button fx:id="shoes3" layoutX="868.0" layoutY="410.0" mnemonicParsing="false" onAction="#shoesSandal" prefHeight="100" prefWidth="100" styleClass="buttonShoes3" text=" " />
+      <Button fx:id="home" layoutX="919.0" layoutY="14.0" mnemonicParsing="false" onAction="#goHome" styleClass="prettybutton" stylesheets="@Styling/DressUpStyle.css" text="Home" />
+      <Button fx:id="saveOutfit" layoutX="656.0" layoutY="534.0" mnemonicParsing="false" onAction="#saveoutOutfit" styleClass="prettybutton" stylesheets="@Styling/DressUpStyle.css" text="Save look" />
+      <Button fx:id="loadOutfit" layoutX="728.0" layoutY="534.0" mnemonicParsing="false" onAction="#loadinOutfit" styleClass="prettybutton" stylesheets="@Styling/DressUpStyle.css" text="Load look" />
+      <Button fx:id="random" layoutX="713.0" layoutY="57.0" mnemonicParsing="false" onAction="#Random" styleClass="prettybutton" stylesheets="@Styling/DressUpStyle.css" text="Random">
+         <tooltip>
+            <Tooltip text="Generate a random look" />
+         </tooltip></Button>
+   </children>
+</AnchorPane>

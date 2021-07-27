@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600" prefWidth="900" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ucf.assignment.BattleController">
+   <children>
+      <ImageView fitHeight="667.0" fitWidth="1079.0" layoutX="-79.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Battles/FightBackdrop.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="Player1attack" layoutX="177.0" layoutY="538.0" mnemonicParsing="false" onAction="#attackPlayer1" text="Sherry">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Button>
+      <ProgressBar fx:id="yourHealth" layoutX="138.0" layoutY="44.0" opacity="0.0" prefWidth="200.0" progress="0.0" styleClass="textLife" />
+      <ProgressBar fx:id="herHealth" layoutX="659.0" layoutY="46.0" opacity="0.0" prefWidth="200.0" progress="0.0" styleClass="textLife" />
+      <ImageView fx:id="You" fitHeight="430.0" fitWidth="346.0" layoutX="72.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="Her" fitHeight="430.0" fitWidth="346.0" layoutX="602.0" layoutY="127.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="Player2attack" layoutX="725.0" layoutY="539.0" mnemonicParsing="false" onAction="#attackPlayer2" text="Shirly">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Button>
+      <Text layoutX="139.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0">
+         <font>
+            <Font size="56.0" />
+         </font>
+      </Text>
+      <Text fx:id="lifeStatus" fill="#da1e1e" layoutX="128.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textLife" text="TTTT">
+         <font>
+            <Font size="56.0" />
+         </font>
+      </Text>
+      <Text fx:id="lifeStatus1" fill="#da1e1e" layoutX="661.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textLife" text="TTTT" textAlignment="RIGHT">
+         <font>
+            <Font size="56.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="661.0" fitWidth="1002.0" layoutX="-2.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Styling/ButtonsandMenu.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="youDefend" layoutX="48.0" layoutY="507.0" mnemonicParsing="false" onAction="#yourDefense" prefHeight="92" prefWidth="92" styleClass="health">
+         <tooltip>
+            <Tooltip text="Increase your health" />
+         </tooltip></Button>
+      <Button fx:id="sheDefend" layoutX="862.0" layoutY="508.0" mnemonicParsing="false" onAction="#herDefense" prefHeight="92" prefWidth="92" styleClass="health" />
+      <Button fx:id="Player2WaterGun" layoutX="749.0" layoutY="510.0" mnemonicParsing="false" onAction="#player2WaterGun" prefHeight="92" prefWidth="92" style="-fx-background-color: transparent;" styleClass="watergun" />
+      <Button fx:id="Player2Balloon" layoutX="545.0" layoutY="506.0" mnemonicParsing="false" onAction="#player2Balloon" prefHeight="92" prefWidth="92" styleClass="balloon" />
+      <Button fx:id="Player2Bucket" layoutX="647.0" layoutY="508.0" mnemonicParsing="false" onAction="#player2Bucket" prefHeight="92" prefWidth="92" styleClass="bucket" />
+      <Button fx:id="Player1WaterGun" layoutX="150.0" layoutY="510.0" mnemonicParsing="false" onAction="#player1WaterGun" prefHeight="92" prefWidth="92" style="-fx-border-radius: 100;" styleClass="watergun">
+         <tooltip>
+            <Tooltip text="Damage: 5-10" />
+         </tooltip></Button>
+      <Button fx:id="Player1Balloon" layoutX="370.0" layoutY="506.0" mnemonicParsing="false" onAction="#player1Balloon" prefHeight="92" prefWidth="92" styleClass="balloon">
+         <tooltip>
+            <Tooltip text="Damage: 0-5" />
+         </tooltip></Button>
+      <Button fx:id="Player1Bucket" layoutX="257.0" layoutY="509.0" mnemonicParsing="false" onAction="#player1Bucket" prefHeight="92" prefWidth="92" styleClass="bucket">
+         <tooltip>
+            <Tooltip text="Damage: 10-15" />
+         </tooltip></Button>
+      <ImageView fitHeight="92.0" fitWidth="92.0" layoutX="454.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Battles/ExitButton.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="Quit" layoutX="458.0" layoutY="40.0" mnemonicParsing="false" onAction="#quitGame" style="-fx-background-color: transparent;" text="QUIT" textFill="WHITE">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
